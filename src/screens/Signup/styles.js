@@ -49,7 +49,7 @@ export const StyledInput = styled(Input)`
 `
 
 export const Row = styled.div`
-  margin-top: 20px;
+  margin-top: 25px;
 `
 
 export const Action = styled.div`
@@ -61,7 +61,7 @@ export const Action = styled.div`
 export const StyledButton = styled(Button)`
   display: flex;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 25px;
 `
 
 export const StyledLink = styled(Link)`

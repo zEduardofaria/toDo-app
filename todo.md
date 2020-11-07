@@ -1,10 +1,13 @@
-- [ ] Layout with react-router
+- [X] Layout Login
+- [ ] Layout Tarefas
 - [ ] Tarefas com state
-- [ ] Auth context
+- [X] Auth context
 - [ ] Task context
-- [ ] Toast e validation
+- [X] Toast e validation
 - [ ] Storybook
+
 - [ ] Melhorar layout?
+- [ ] Controle de usuários
 
 
 

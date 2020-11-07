@@ -6,15 +6,15 @@ import { Logout } from '@/components'
 import { Container } from './styles'
 
 const Main = () => {
-  const { user } = useAuth()
+  const { USER } = useAuth()
 
-  if (!user) {
+  if (!USER) {
     return <div>Loading</div>
   }
 
   return (
     <Container>
-      Bem vindo, {user.name}
+      Bem vindo, {USER.name}
       <Logout />
     </Container>
   )

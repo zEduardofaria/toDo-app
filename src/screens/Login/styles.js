@@ -13,11 +13,6 @@ export const Container = styled.div`
   flex: 1;
   height: 100%;
   padding: 150px;
-
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  background-image: url(${({ image }) => image});
 `
 
 export const Content = styled(Form)`

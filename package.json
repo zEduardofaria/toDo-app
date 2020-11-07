@@ -37,6 +37,7 @@
     "react-scripts": "3.4.1",
     "react-toastify": "^6.1.0",
     "styled-components": "^5.1.1",
+    "styled-media-query": "^2.1.2",
     "yup": "^0.29.3"
   },
   "devDependencies": {

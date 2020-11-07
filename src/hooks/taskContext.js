@@ -13,6 +13,7 @@ const TaskProvider = ({ children }) => {
     const newTask = {
       id: uuid(),
       description,
+      status: 'todo',
       createdBy,
       createdAt: new Date(),
     }
@@ -24,10 +25,10 @@ const TaskProvider = ({ children }) => {
     return true
   }
 
-  const editTask = ({ taskId, description }) => {
+  const editTask = ({ taskId, ...newEdit }) => {
     const newTasks = [...tasks]
     const taskIndex = tasks.findIndex((task) => task.id === taskId)
-    newTasks[taskIndex] = { ...newTasks[taskIndex], description }
+    newTasks[taskIndex] = { ...newTasks[taskIndex], ...newEdit }
 
     localStorage.setItem('@TodoApp:TASKS', JSON.stringify(newTasks))
     setTasks(newTasks)
@@ -44,16 +45,15 @@ const TaskProvider = ({ children }) => {
     return true
   }
 
-  const getTasks = (userId) => tasks.filter((task) => task.createdBy === userId)
+  // const getTasks = (userId) => tasks.filter((task) => task.createdBy === userId)
 
   return (
     <TaskContext.Provider
       value={{
-        USERS: tasks,
         addTask,
         editTask,
         deleteTask,
-        getTasks,
+        // getTasks,
       }}
     >
       {children}

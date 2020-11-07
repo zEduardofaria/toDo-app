@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { useAuth } from '@/hooks/authContext'
+import { useTask } from '@/hooks/taskContext'
 import { Logout, TaskList } from '@/components'
 
 import {
@@ -16,6 +17,23 @@ import {
 
 const Main = () => {
   const { USER } = useAuth()
+  const { tasks } = useTask()
+  const [todoTasks, setTodoTasks] = useState([])
+  const [doneTasks, setDoneTasks] = useState([])
+
+  useEffect(() => {
+    if (USER && tasks) {
+      const todo = tasks.filter(
+        (task) => task.status === 'todo' && task.createdBy === USER.id
+      )
+      const done = tasks.filter(
+        (task) => task.status === 'done' && task.createdBy === USER.id
+      )
+
+      setTodoTasks(todo)
+      setDoneTasks(done)
+    }
+  }, [USER, tasks])
 
   if (!USER) {
     return <div>Loading</div>
@@ -34,10 +52,10 @@ const Main = () => {
             label="Nova tarefa"
           />
         </Header>
-        <SubTitle>Você tem 5 tarefas para fazer.</SubTitle>
+        <SubTitle>Você tem {todoTasks.length} tarefas para fazer.</SubTitle>
         <Section>
-          <TaskList title="Para fazer" />
-          <TaskList title="Concluídas" />
+          <TaskList title="Para fazer" tasks={todoTasks} />
+          <TaskList title="Concluídas" tasks={doneTasks} />
         </Section>
         <Footer>
           <Logout />

@@ -5,12 +5,12 @@ const AuthContext = createContext()
 
 const AuthProvider = ({ children }) => {
   const [userLogged, setUserLogged] = useState(
-    localStorage.getItem('@Manvantara:USER_LOGGED')
+    localStorage.getItem('@TodoApp:USER_LOGGED')
   )
 
   const signIn = useCallback(({ email, password }) => {
     if (email === 'teste@teste.com' && password === '123') {
-      localStorage.setItem('@Manvantara:USER_LOGGED', email)
+      localStorage.setItem('@TodoApp:USER_LOGGED', email)
       setUserLogged(true)
       return true
     }
@@ -19,7 +19,7 @@ const AuthProvider = ({ children }) => {
   }, [])
 
   const signOut = useCallback(() => {
-    localStorage.removeItem('@Manvantara:USER_LOGGED')
+    localStorage.removeItem('@TodoApp:USER_LOGGED')
     setUserLogged(false)
   }, [])
 

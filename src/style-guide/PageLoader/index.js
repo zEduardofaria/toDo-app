@@ -5,7 +5,7 @@ import { Container, LoaderContainer } from './styles'
 
 const PageLoader = () => (
   <Container>
-    <LoaderContainer src={Loader} alt="Manvantara" />
+    <LoaderContainer src={Loader} alt="TodoApp" />
   </Container>
 )
 

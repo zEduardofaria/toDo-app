@@ -18,7 +18,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 100px;
+  margin-top: 85px;
   padding: 20px;
 
   ${media.greaterThan('medium')`

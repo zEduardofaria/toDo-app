@@ -4,7 +4,7 @@ import { ReactQueryCacheProvider, QueryCache } from 'react-query'
 import { ToastContainer } from 'react-toastify'
 
 import { AuthProvider } from '@/hooks/authContext'
-import { Login, Main } from '@/screens'
+import { Login, Main, Signup } from '@/screens'
 import { Route } from '@/components'
 import { GlobalStyle, PageLoader } from '@/style-guide'
 
@@ -22,6 +22,7 @@ const App = () => (
           <BrowserRouter>
             <Switch>
               <Route path="/login" component={Login} />
+              <Route path="/signup" component={Signup} />
               <Route path="/" component={Main} isPrivate />
             </Switch>
           </BrowserRouter>

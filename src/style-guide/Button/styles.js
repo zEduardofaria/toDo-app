@@ -44,19 +44,6 @@ const getButtonType = (type) => {
           background-color: ${shade(0.3, green)};
         }
       `
-    case 'text':
-      return css`
-        color: ${blackLight};
-        background-color: transparent;
-
-        :hover:not(:disabled) {
-          color: ${shade(0.6, blackLight)};
-        }
-
-        :active:not(:disabled) {
-          color: ${shade(1, blackLight)};
-        }
-      `
     default:
       return css`
         color: ${blackLight};

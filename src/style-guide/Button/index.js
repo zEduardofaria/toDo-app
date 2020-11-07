@@ -18,7 +18,7 @@ const Button = ({
   className,
   style,
   type = 'default',
-  width = 175,
+  width,
   height = 54,
 }) => (
   <StyledButton

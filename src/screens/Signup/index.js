@@ -18,6 +18,7 @@ import {
 } from './styles'
 
 const validationSchema = yup.object().shape({
+  name: yup.string().required('Por favor, digite seu nome'),
   email: yup
     .string()
     .email('Informe um email válido')
@@ -25,20 +26,19 @@ const validationSchema = yup.object().shape({
   password: yup.string().required('Por favor, digite a sua senha'),
 })
 
-const Login = () => {
+const Signup = () => {
   const history = useHistory()
-
-  const { signIn } = useAuth()
+  const { signUp } = useAuth()
   const showToast = useToast()
 
-  const auth = async ({ email, password }) => {
-    const logged = await signIn({ email, password })
+  const register = async ({ name, email, password }) => {
+    const logged = await signUp({ name, email, password })
 
     if (logged) {
       return history.push('/')
     }
 
-    showToast('error', 'Usuário ou senha inválidos.')
+    showToast('error', 'Email indisponível para cadastro.')
 
     return this
   }
@@ -47,11 +47,12 @@ const Login = () => {
     <Container>
       <Formik
         initialValues={{
+          name: '',
           email: '',
           password: '',
         }}
         validationSchema={validationSchema}
-        onSubmit={auth}
+        onSubmit={register}
       >
         {({
           values,
@@ -62,7 +63,18 @@ const Login = () => {
           handleSubmit,
         }) => (
           <Content>
-            <Header>Entrar</Header>
+            <Header>Cadastrar</Header>
+            <Row>
+              <StyledInput
+                name="name"
+                type="name"
+                placeholder="Nome"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.name}
+                error={touched.name && errors.name}
+              />
+            </Row>
             <Row>
               <StyledInput
                 name="email"
@@ -90,11 +102,11 @@ const Login = () => {
                 type="primary"
                 height={35}
                 onClick={handleSubmit}
-                label="Entrar"
+                label="Cadastrar"
               />
 
-              <StyledLink to="/signup">
-                <StyledButton height={35} label="Cadastrar" />
+              <StyledLink to="/login">
+                <StyledButton height={35} label="Voltar" />
               </StyledLink>
             </Action>
           </Content>
@@ -104,4 +116,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Signup

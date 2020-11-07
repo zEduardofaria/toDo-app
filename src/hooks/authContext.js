@@ -6,6 +6,7 @@ import React, {
   useEffect,
 } from 'react'
 import { node } from 'prop-types'
+import uuid from 'react-uuid'
 
 const AuthContext = createContext()
 
@@ -57,7 +58,7 @@ const AuthProvider = ({ children }) => {
       const hasAvailableEmail = !checkEmail(email)
 
       if (hasAvailableEmail) {
-        const newUser = { name, email, password }
+        const newUser = { id: uuid(), name, email, password }
         const newUsers = [...users, newUser]
 
         setUserLogged(true)
@@ -91,7 +92,6 @@ const AuthProvider = ({ children }) => {
         signIn,
         signOut,
         signUp,
-        setUserLogged,
       }}
     >
       {children}

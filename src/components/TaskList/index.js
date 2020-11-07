@@ -1,11 +1,18 @@
 import React from 'react'
 import { string } from 'prop-types'
 
-import { Container, Title } from './styles'
+import { Task } from '@/components'
+
+import { Container, Title, Content } from './styles'
 
 const TaskList = ({ title }) => (
   <Container>
     <Title>{title}</Title>
+    <Content>
+      <Task />
+      <Task />
+      <Task />
+    </Content>
   </Container>
 )
 

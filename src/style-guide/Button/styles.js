@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { shade } from 'polished'
 
-import { green, white, blue, blackLight, red } from '../colors'
+import { green, white, blue, blackLight, darkGrey, orange } from '../colors'
 
 const getButtonType = (type) => {
   switch (type) {
@@ -21,14 +21,14 @@ const getButtonType = (type) => {
     case 'danger':
       return css`
         color: ${white};
-        background-color: ${red};
+        background-color: ${orange};
 
         :hover:not(:disabled) {
-          background-color: ${shade(0.2, red)};
+          background-color: ${shade(0.2, orange)};
         }
 
         :active:not(:disabled) {
-          background-color: ${shade(0.3, red)};
+          background-color: ${shade(0.3, orange)};
         }
       `
     case 'success':
@@ -48,16 +48,16 @@ const getButtonType = (type) => {
       return css`
         color: ${blackLight};
         background-color: ${white};
-        border: 1px solid ${blackLight};
+        border: 1px solid ${darkGrey};
 
         :hover:not(:disabled) {
           color: ${shade(0.6, blackLight)};
-          border: 1px solid ${shade(0.6, blackLight)};
+          border: 1px solid ${shade(0.6, darkGrey)};
         }
 
         :active:not(:disabled) {
           color: ${shade(1, blackLight)};
-          border: 1px solid ${shade(1, blackLight)};
+          border: 1px solid ${shade(1, darkGrey)};
         }
       `
   }

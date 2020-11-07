@@ -3,7 +3,7 @@ import media from 'styled-media-query'
 
 import { Button } from '@/style-guide'
 
-import { blackLight } from '@/style-guide/colors'
+import { blackLight, blueBackground } from '@/style-guide/colors'
 
 export const Container = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ export const Container = styled.div`
   flex: 1;
   height: 100%;
   width: 100%;
-  background-color: #f5f7f9;
+  background-color: ${blueBackground};
 `
 
 export const Content = styled.div`

@@ -10,14 +10,19 @@ export const Container = styled.div`
   height: 700px;
   border-radius: 5px;
   box-shadow: 0px 5px 14px ${greyShadow};
-  padding: 20px;
 
   ${media.greaterThan('medium')`
     width: 320px;
   `}
 `
 
+export const Content = styled.div`
+  overflow-y: overlay;
+  padding: 0px 20px;
+`
+
 export const Title = styled.div`
   font-size: 16px;
+  padding: 20px 20px 0px 20px;
   color: ${blackLight};
 `

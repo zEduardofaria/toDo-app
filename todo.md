@@ -1,0 +1,7 @@
+- [ ] Layout with react-router
+- [ ] Tarefas com state
+- [ ] Auth context
+- [ ] Task context
+- [ ] Toast e validation
+- [ ] Storybook
+- [ ] Melhorar layout?

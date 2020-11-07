@@ -11,6 +11,7 @@ export const Container = styled.div`
   flex: 1;
   height: 100%;
   width: 100%;
+  background-color: #f5f7f9;
 `
 
 export const Content = styled.div`
@@ -21,7 +22,7 @@ export const Content = styled.div`
   padding: 20px;
 
   ${media.greaterThan('medium')`
-    width: 650px;
+    width: 700px;
   `}
 `
 

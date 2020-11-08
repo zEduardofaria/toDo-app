@@ -20,7 +20,7 @@ const Button = ({
   style,
   type = 'default',
   width,
-  height = 54,
+  height = 35,
   icon,
 }) => (
   <StyledButton

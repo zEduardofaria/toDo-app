@@ -1,5 +1,5 @@
 import React from 'react'
-import { object } from 'prop-types'
+import { object, func } from 'prop-types'
 import LinesEllipsis from 'react-lines-ellipsis'
 
 import { useTask } from '@/hooks/taskContext'
@@ -13,7 +13,7 @@ import {
   FinishButton,
 } from './styles'
 
-const Task = ({ data: { id, description, status } }) => {
+const Task = ({ data: { id, description, status }, onEdit }) => {
   const { deleteTask, editTask } = useTask()
 
   return (
@@ -40,7 +40,7 @@ const Task = ({ data: { id, description, status } }) => {
             <EditButton
               type="primary"
               height={35}
-              onClick={() => {}}
+              onClick={() => onEdit({ taskId: id, description })}
               label="Editar"
             />
             <FinishButton
@@ -58,6 +58,7 @@ const Task = ({ data: { id, description, status } }) => {
 
 Task.propTypes = {
   data: object,
+  onEdit: func,
 }
 
 export default Task

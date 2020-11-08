@@ -45,8 +45,6 @@ const TaskProvider = ({ children }) => {
     return true
   }
 
-  // const getTasks = (userId) => tasks.filter((task) => task.createdBy === userId)
-
   return (
     <TaskContext.Provider
       value={{
@@ -54,7 +52,6 @@ const TaskProvider = ({ children }) => {
         editTask,
         deleteTask,
         tasks,
-        // getTasks,
       }}
     >
       {children}

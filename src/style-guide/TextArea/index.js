@@ -11,6 +11,7 @@ const Input = ({
   placeholder,
   style,
   className,
+  value,
 }) => (
   <Container
     backgroundColor={backgroundColor}
@@ -21,6 +22,7 @@ const Input = ({
       backgroundColor={backgroundColor}
       onChange={({ target: { value } }) => onChange(value)}
       placeholder={placeholder}
+      value={value}
     />
   </Container>
 )
@@ -29,6 +31,7 @@ Input.propTypes = {
   onChange: func,
   backgroundColor: string,
   placeholder: string,
+  value: string,
   style: object,
   className: string,
 }

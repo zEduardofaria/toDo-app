@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react'
 
 import { useAuth } from '@/hooks/authContext'
 import { useTask } from '@/hooks/taskContext'
-import { Logout, TaskList } from '@/components'
+import { Logout, TaskList, ModalEditTask, ModalNewTask } from '@/components'
 
-import ModalNewTasks from '@/components/ModalNewTask'
 import {
   Container,
   Content,
@@ -18,10 +17,12 @@ import {
 
 const Main = () => {
   const { USER } = useAuth()
-  const { tasks, addTask } = useTask()
+  const { tasks, addTask, editTask } = useTask()
   const [todoTasks, setTodoTasks] = useState([])
   const [doneTasks, setDoneTasks] = useState([])
   const [modalNewTask, setModalNewTask] = useState(false)
+  const [modalEditTask, setModalEditTask] = useState(false)
+  const [editData, setEditData] = useState({})
 
   useEffect(() => {
     if (USER && tasks) {
@@ -45,6 +46,11 @@ const Main = () => {
     setModalNewTask(!modalNewTask)
   }
 
+  const handleModalEditTask = ({ taskId, description }) => {
+    setModalEditTask(!modalEditTask)
+    setEditData({ taskId, description })
+  }
+
   return (
     <Container>
       <Content>
@@ -60,17 +66,32 @@ const Main = () => {
         </Header>
         <SubTitle>Você tem {todoTasks.length} tarefas para fazer.</SubTitle>
         <Section>
-          <TaskList title="Para fazer" tasks={todoTasks} />
-          <TaskList title="Concluídas" tasks={doneTasks} />
+          <TaskList
+            title="Para fazer"
+            tasks={todoTasks}
+            onEdit={handleModalEditTask}
+          />
+          <TaskList
+            title="Concluídas"
+            tasks={doneTasks}
+            onEdit={handleModalEditTask}
+          />
         </Section>
         <Footer>
           <Logout />
         </Footer>
-        <ModalNewTasks
+        <ModalNewTask
           isOpen={modalNewTask}
           onClose={handleModalNewTask}
           addTask={addTask}
           userId={USER.id}
+        />
+        <ModalEditTask
+          isOpen={modalEditTask}
+          onClose={() => setModalEditTask(!modalEditTask)}
+          editTask={editTask}
+          userId={USER.id}
+          data={editData}
         />
       </Content>
     </Container>

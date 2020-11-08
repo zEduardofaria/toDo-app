@@ -78,8 +78,8 @@ const getButtonType = (type) => {
 
 export const StyledButton = styled.button`
   width: 100%;
-  max-width: ${({ width }) => `${width}px`};
-  min-height: ${({ height }) => `${height}px`};
+  max-width: ${({ width }) => width && `${width}px`};
+  min-height: ${({ height }) => height && `${height}px`};
   flex: 1;
   display: flex;
   justify-content: center;

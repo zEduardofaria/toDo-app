@@ -3,8 +3,8 @@ import { Formik } from 'formik'
 import * as yup from 'yup'
 import { useHistory } from 'react-router-dom'
 
-import useToast from '@/hooks/useToast'
-import { useAuth } from '@/hooks/authContext'
+import useToast from '../../hooks/useToast'
+import { useAuth } from '../../hooks/authContext'
 
 import {
   Container,

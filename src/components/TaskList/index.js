@@ -1,7 +1,7 @@
 import React from 'react'
 import { array, string, func } from 'prop-types'
 
-import { Task } from '@/components'
+import Task from '../Task'
 
 import { Container, Title, Content } from './styles'
 

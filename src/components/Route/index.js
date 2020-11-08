@@ -2,7 +2,7 @@ import React from 'react'
 import { bool, any } from 'prop-types'
 import { Redirect, Route as ReactDOMRoute } from 'react-router-dom'
 
-import { useAuth } from '@/hooks/authContext'
+import { useAuth } from '../../hooks/authContext'
 
 const Route = ({ isPrivate = false, component: Component, ...rest }) => {
   const { USER_LOGGED } = useAuth()

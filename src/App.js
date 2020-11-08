@@ -3,11 +3,11 @@ import { BrowserRouter, Switch } from 'react-router-dom'
 import { ReactQueryCacheProvider, QueryCache } from 'react-query'
 import { ToastContainer } from 'react-toastify'
 
-import { AuthProvider } from '@/hooks/authContext'
-import { TaskProvider } from '@/hooks/taskContext'
-import { Login, Main, Signup } from '@/screens'
-import { Route } from '@/components'
-import { GlobalStyle, PageLoader } from '@/style-guide'
+import { AuthProvider } from './hooks/authContext'
+import { TaskProvider } from './hooks/taskContext'
+import { Login, Main, Signup } from './screens'
+import { Route } from './components'
+import { GlobalStyle, PageLoader } from './style-guide'
 
 import 'react-toastify/dist/ReactToastify.css'
 

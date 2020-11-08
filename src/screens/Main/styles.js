@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import media from 'styled-media-query'
 
-import { Button } from '@/style-guide'
+import { Button } from '../../style-guide'
 
-import { blackLight, blueBackground } from '@/style-guide/colors'
+import { blackLight, blueBackground } from '../../style-guide/colors'
 
 export const Container = styled.div`
   display: flex;

@@ -3,8 +3,8 @@ import { shade } from 'polished'
 import { Form } from 'formik'
 import { Link } from 'react-router-dom'
 
-import { Input, Button } from '@/style-guide'
-import { white, greyShadow, darkGrey } from '@/style-guide/colors'
+import { Input, Button } from '../../style-guide'
+import { white, greyShadow, darkGrey } from '../../style-guide/colors'
 
 export const Container = styled.div`
   display: flex;

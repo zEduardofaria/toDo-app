@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
-import { Button } from '@/style-guide'
-import { greyShadow, greyBorder } from '@/style-guide/colors'
+import { Button } from '../../style-guide'
+import { greyShadow, greyBorder } from '../../style-guide/colors'
 
 export const Container = styled.div`
   display: flex;

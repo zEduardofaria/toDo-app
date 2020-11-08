@@ -2,7 +2,7 @@ import React from 'react'
 import { object, func } from 'prop-types'
 import LinesEllipsis from 'react-lines-ellipsis'
 
-import { useTask } from '@/hooks/taskContext'
+import { useTask } from '../../hooks/taskContext'
 
 import {
   Container,

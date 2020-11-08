@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
-import { useAuth } from '@/hooks/authContext'
-import { useTask } from '@/hooks/taskContext'
-import { Logout, TaskList, ModalEditTask, ModalNewTask } from '@/components'
+import { useAuth } from '../../hooks/authContext'
+import { useTask } from '../../hooks/taskContext'
+import { Logout, TaskList, ModalEditTask, ModalNewTask } from '../../components'
 
 import {
   Container,

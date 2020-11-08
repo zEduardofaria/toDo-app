@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { bool, func, string } from 'prop-types'
 
-import useToast from '@/hooks/useToast'
-import { Modal, TextArea } from '@/style-guide'
+import useToast from '../../hooks/useToast'
+import { Modal, TextArea } from '../../style-guide'
 
 import { Container, Content, StyledButton } from './styles'
 

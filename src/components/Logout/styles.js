@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { blackLight } from '@/style-guide/colors'
+import { blackLight } from '../../style-guide/colors'
 
 export const Container = styled.div`
   font-size: 18px;

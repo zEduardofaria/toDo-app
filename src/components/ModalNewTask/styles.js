@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { Button } from '@/style-guide'
+import { Button } from '../../style-guide'
 
 export const Container = styled.div`
   display: flex;

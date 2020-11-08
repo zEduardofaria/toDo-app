@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import media from 'styled-media-query'
 
-import { blackLight, greyShadow } from '@/style-guide/colors'
+import { blackLight, greyShadow } from '../../style-guide/colors'
 
 export const Container = styled.div`
   display: flex;

@@ -7,6 +7,7 @@ import {
   oneOf,
   oneOfType,
   object,
+  node,
 } from 'prop-types'
 
 import { StyledButton, Label } from './styles'
@@ -20,6 +21,7 @@ const Button = ({
   type = 'default',
   width,
   height = 54,
+  icon,
 }) => (
   <StyledButton
     className={className}
@@ -30,6 +32,7 @@ const Button = ({
     width={width}
     height={height}
   >
+    {icon}
     {label && <Label>{label}</Label>}
   </StyledButton>
 )
@@ -43,6 +46,7 @@ Button.propTypes = {
   height: number,
   onClick: func,
   style: object,
+  icon: node,
 }
 
 export default Button

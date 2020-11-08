@@ -4,6 +4,7 @@ import { useAuth } from '@/hooks/authContext'
 import { useTask } from '@/hooks/taskContext'
 import { Logout, TaskList } from '@/components'
 
+import ModalNewTasks from '@/components/ModalNewTask'
 import {
   Container,
   Content,
@@ -20,6 +21,7 @@ const Main = () => {
   const { tasks } = useTask()
   const [todoTasks, setTodoTasks] = useState([])
   const [doneTasks, setDoneTasks] = useState([])
+  const [modalNewTask, setModalNewTask] = useState(false)
 
   useEffect(() => {
     if (USER && tasks) {
@@ -39,6 +41,10 @@ const Main = () => {
     return <div>Loading</div>
   }
 
+  const handleModalNewTask = () => {
+    setModalNewTask(!modalNewTask)
+  }
+
   return (
     <Container>
       <Content>
@@ -48,7 +54,7 @@ const Main = () => {
             type="primary"
             height={35}
             width={175}
-            onClick={() => {}}
+            onClick={handleModalNewTask}
             label="Nova tarefa"
           />
         </Header>
@@ -60,6 +66,7 @@ const Main = () => {
         <Footer>
           <Logout />
         </Footer>
+        <ModalNewTasks isOpen={modalNewTask} onClose={handleModalNewTask} />
       </Content>
     </Container>
   )

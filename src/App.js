@@ -4,6 +4,7 @@ import { ReactQueryCacheProvider, QueryCache } from 'react-query'
 import { ToastContainer } from 'react-toastify'
 
 import { AuthProvider } from '@/hooks/authContext'
+import { TaskProvider } from '@/hooks/taskContext'
 import { Login, Main, Signup } from '@/screens'
 import { Route } from '@/components'
 import { GlobalStyle, PageLoader } from '@/style-guide'
@@ -18,15 +19,17 @@ const App = () => (
       <GlobalStyle />
       <ToastContainer />
       <AuthProvider>
-        <Suspense fallback={<PageLoader />}>
-          <BrowserRouter>
-            <Switch>
-              <Route path="/login" component={Login} />
-              <Route path="/signup" component={Signup} />
-              <Route path="/" component={Main} isPrivate />
-            </Switch>
-          </BrowserRouter>
-        </Suspense>
+        <TaskProvider>
+          <Suspense fallback={<PageLoader />}>
+            <BrowserRouter>
+              <Switch>
+                <Route path="/login" component={Login} />
+                <Route path="/signup" component={Signup} />
+                <Route path="/" component={Main} isPrivate />
+              </Switch>
+            </BrowserRouter>
+          </Suspense>
+        </TaskProvider>
       </AuthProvider>
     </ReactQueryCacheProvider>
   </>

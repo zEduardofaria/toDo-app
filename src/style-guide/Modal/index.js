@@ -11,7 +11,7 @@ const defaultContent = {
   bottom: 'auto',
   minWidth: 'unset',
   width: '100%',
-  maxWidth: '900px',
+  maxWidth: '500px',
   padding: 0,
   transform: 'translate(-50%, -50%)',
 }
@@ -29,6 +29,7 @@ const Modal = ({
   styleContent,
   styleOverlay,
 }) => {
+  console.log('title', title)
   return (
     <ReactModal
       isOpen={isOpen}

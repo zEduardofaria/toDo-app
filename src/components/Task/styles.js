@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { Button } from '@/style-guide'
 import { greyShadow, greyBorder } from '@/style-guide/colors'
@@ -25,6 +25,12 @@ export const Actions = styled.div`
 
 export const DeleteButton = styled(Button)`
   border-radius: 0px 0px 0px 5px;
+
+  ${({ isDone }) =>
+    isDone &&
+    css`
+      border-radius: 0px 0px 5px 5px;
+    `}
 `
 
 export const EditButton = styled(Button)`

@@ -6,7 +6,6 @@ import { grey, red } from '../colors'
 export const Container = styled.div`
   position: relative;
   width: 100%;
-  background-color: ${({ backgroundColor }) => backgroundColor};
   border: 1px solid ${grey};
   border-radius: 2px;
   height: 32px;
@@ -18,12 +17,10 @@ export const Container = styled.div`
 
 export const StyledInput = styled.input`
   border: none;
-  background-color: ${({ backgroundColor }) => backgroundColor};
   margin: 0;
   padding: 0 5px;
   width: 100%;
   height: 100%;
-  padding-left: ${({ icon }) => !!icon && '24px'};
   outline: none;
 `
 

@@ -28,40 +28,37 @@ const Modal = ({
   styleContainer,
   styleContent,
   styleOverlay,
-}) => {
-  console.log('title', title)
-  return (
-    <ReactModal
-      isOpen={isOpen}
-      shouldCloseOnEsc
-      shouldCloseOnOverlayClick
-      style={{
-        content: {
-          ...defaultContent,
-          ...styleContent,
-        },
-        overlay: {
-          ...defaultOverlay,
-          ...styleOverlay,
-        },
-      }}
-    >
-      {title && (
-        <Header>
-          <Close
-            onClick={onClose}
-            icon={<Icon iconSize={24} name="close" />}
-            type="text"
-            width={40}
-            height={40}
-          />
-          <Title>{title}</Title>
-        </Header>
-      )}
-      <Container style={styleContainer}>{children}</Container>
-    </ReactModal>
-  )
-}
+}) => (
+  <ReactModal
+    isOpen={isOpen}
+    shouldCloseOnEsc
+    shouldCloseOnOverlayClick
+    style={{
+      content: {
+        ...defaultContent,
+        ...styleContent,
+      },
+      overlay: {
+        ...defaultOverlay,
+        ...styleOverlay,
+      },
+    }}
+  >
+    {title && (
+      <Header>
+        <Close
+          onClick={onClose}
+          icon={<Icon iconSize={24} name="close" />}
+          type="text"
+          width={40}
+          height={40}
+        />
+        <Title>{title}</Title>
+      </Header>
+    )}
+    <Container style={styleContainer}>{children}</Container>
+  </ReactModal>
+)
 
 Modal.propTypes = {
   title: string,

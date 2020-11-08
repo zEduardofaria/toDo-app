@@ -6,15 +6,15 @@ const TaskContext = createContext()
 
 const TaskProvider = ({ children }) => {
   const [tasks, setTasks] = useState(
-    localStorage.getItem('@TodoApp:TASKS') || {}
+    JSON.parse(localStorage.getItem('@TodoApp:TASKS')) || []
   )
 
-  const addTask = ({ description, createdBy }) => {
+  const addTask = ({ description, userId }) => {
     const newTask = {
       id: uuid(),
       description,
       status: 'todo',
-      createdBy,
+      createdBy: userId,
       createdAt: new Date(),
     }
     const newTasks = [...tasks, newTask]
@@ -53,6 +53,7 @@ const TaskProvider = ({ children }) => {
         addTask,
         editTask,
         deleteTask,
+        tasks,
         // getTasks,
       }}
     >

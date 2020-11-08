@@ -18,7 +18,7 @@ import {
 
 const Main = () => {
   const { USER } = useAuth()
-  const { tasks } = useTask()
+  const { tasks, addTask } = useTask()
   const [todoTasks, setTodoTasks] = useState([])
   const [doneTasks, setDoneTasks] = useState([])
   const [modalNewTask, setModalNewTask] = useState(false)
@@ -66,7 +66,12 @@ const Main = () => {
         <Footer>
           <Logout />
         </Footer>
-        <ModalNewTasks isOpen={modalNewTask} onClose={handleModalNewTask} />
+        <ModalNewTasks
+          isOpen={modalNewTask}
+          onClose={handleModalNewTask}
+          addTask={addTask}
+          userId={USER.id}
+        />
       </Content>
     </Container>
   )

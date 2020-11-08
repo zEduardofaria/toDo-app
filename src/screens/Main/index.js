@@ -23,6 +23,12 @@ const Main = () => {
   const [modalNewTask, setModalNewTask] = useState(false)
   const [modalEditTask, setModalEditTask] = useState(false)
   const [editData, setEditData] = useState({})
+  const title =
+    todoTasks.length > 0
+      ? `Você tem ${todoTasks.length} tarefa${
+          todoTasks.length !== 1 ? 's' : ''
+        } para fazer.`
+      : `Você não tem nenhuma tarefa para fazer.`
 
   useEffect(() => {
     if (USER && tasks) {
@@ -64,7 +70,7 @@ const Main = () => {
             label="Nova tarefa"
           />
         </Header>
-        <SubTitle>Você tem {todoTasks.length} tarefas para fazer.</SubTitle>
+        <SubTitle>{title}</SubTitle>
         <Section>
           <TaskList
             title="Para fazer"

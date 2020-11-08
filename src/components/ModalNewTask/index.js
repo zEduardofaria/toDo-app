@@ -20,6 +20,7 @@ const ModalNewTasks = ({ isOpen, onClose, addTask, userId }) => {
     }
 
     addTask({ description, userId })
+    setDescription('')
     return onClose()
   }
 

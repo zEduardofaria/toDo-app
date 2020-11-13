@@ -19,6 +19,7 @@ Cada módulo tem seu próprio comando para realizar o build.
 ### Observations
 
 - Desconsidere boas práticas de segurança relacionados as informações expostas por essa abordagem de salvar informações no LocalStorage.
+- Boas práticas de Gitflow foram ignoradas pelo projeto ser pessoal.
 
 ### What comes next?
 

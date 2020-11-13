@@ -12,10 +12,6 @@ Esse é um projeto React usando o LocalStorage como armazenamento.
 - Execute o comando `yarn start`
 - Após ter sido executado, os app iniciará na porta `3000`,
 
-### Build
-
-Cada módulo tem seu próprio comando para realizar o build.
-
 ### Observations
 
 - Desconsidere boas práticas de segurança relacionados as informações expostas por essa abordagem de salvar informações no LocalStorage.

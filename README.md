@@ -22,4 +22,5 @@ Esse é um projeto React usando o LocalStorage como armazenamento.
 - [ ] Adicionar try catch em cada ação que simula uma chamada de API.
 - [ ] Passar as responsabilidades de verificação de valores para dentro do próprio Context, deixando os Submits de cada Form responsáveis apenas por enviar a requisição e em seguida history.push.
 - [ ] Centralizar o uso do useToast, possibilitando o uso do Throw Error para gerenciar as notificações de erro.
+- [ ] Arrumar config-overrides
 - [ ] Adicionar testes em cada action do app

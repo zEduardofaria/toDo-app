@@ -1,0 +1,13 @@
+export const blueBackground = '#F3F9FF'
+export const blackLight = '#263644'
+export const grey = '#d8d8d8'
+export const greyBorder = '#dae0e6'
+export const greyShadow = '#DCE3F3B0'
+export const darkGrey = '#808080'
+export const red = '#ef0708'
+export const redBackground = '#fee9e9'
+export const white = '#fff'
+
+export const blue = '#14b9d6'
+export const orange = '#f27935'
+export const green = '#1fbba6'
